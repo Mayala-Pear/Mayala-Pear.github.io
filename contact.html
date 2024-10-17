@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist | Meaganrose Pearsall</title>
+    <link rel="stylesheet" href="Art.css">
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <ul>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <a href="Art.html"><img src="logo.png" alt="Logo" class="logo"></a> <!-- Wrapped the logo in an anchor tag -->
+            <ul>
+                <li><a href="contact.html">Contact</a></li>
+                <div class="cart">
+                    <button id="cart-button">Cart (<span id="cart-count">0</span>)</button>
+                </div>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- Contact section -->
+    <div class="container">
+        <section id="contact">
+            <h4>Contact Us</h4>
+            <p>Feel free to reach out for any inquiries or feedback!</p>
+
+    
+          <form action="contact_form.php" method="post">
+            <div class="section">
+              <label>Name</label>
+              <input class="input border" type="text" name="name" required>
+            </div>
+            <div class="section">
+              <label>Email</label>
+              <input class="input border" type="email" name="email" required>
+            </div>
+            <div class="section">
+              <label>Message</label>
+              <textarea class="input border" name="message" required></textarea>
+            </div>
+            <button type="submit" class="button block black margin-bottom">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+      <footer>
+        <p>© 2024 Meaganrose Pearsall</p>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+    </footer>
+
+    <script src="Art.js"></script>
+</body>
+</html>

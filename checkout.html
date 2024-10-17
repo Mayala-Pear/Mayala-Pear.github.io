@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist | Meaganrose Pearsall</title>
+    <link rel="stylesheet" href="Art.css">
+    <script src="https://js.stripe.com/v3/"></script>
+
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <ul>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <a href="Art.html"><img src="logo.png" alt="Logo" class="logo"></a> <!-- Wrapped the logo in an anchor tag -->
+            <ul>
+                <li><a href="contact.html">Contact</a></li>
+                <div class="cart">
+                    <button id="cart-button">Cart (<span id="cart-count">0</span>)</button>
+                </div>
+            </ul>
+        </nav>
+
+    </header>
+  
+      <main>
+          <div class="checkout-container">
+              <!-- Customer Information -->
+              <section class="customer-info">
+                  <h2>Billing Information</h2>
+                  <form id="checkout-form">
+                      <label for="name">Full Name:</label>
+                      <input type="text" id="name" name="name" required>
+  
+                      <label for="email">Email:</label>
+                      <input type="email" id="email" name="email" required>
+  
+                      <label for="address">Address:</label>
+                      <input type="text" id="address" name="address" required>
+  
+                      <label for="city">City:</label>
+                      <input type="text" id="city" name="city" required>
+  
+                      <label for="state">State:</label>
+                      <input type="text" id="state" name="state" required>
+  
+                      <label for="zip">Zip Code:</label>
+                      <input type="text" id="zip" name="zip" required>
+  
+                      <!-- Shipping Information -->
+                      <h2>Shipping Information</h2>
+                      <label>
+                          <input type="checkbox" id="same-as-billing"> Same as Billing Address
+                      </label>
+  
+                      <div id="shipping-info">
+                          <label for="shipping-address">Shipping Address:</label>
+                          <input type="text" id="shipping-address" name="shipping-address">
+  
+                          <label for="shipping-city">Shipping City:</label>
+                          <input type="text" id="shipping-city" name="shipping-city">
+  
+                          <label for="shipping-state">Shipping State:</label>
+                          <input type="text" id="shipping-state" name="shipping-state">
+  
+                          <label for="shipping-zip">Shipping Zip Code:</label>
+                          <input type="text" id="shipping-zip" name="shipping-zip">
+                      </div>
+                  </form>
+              </section>
+  
+              <!-- Payment Information -->
+              <section class="payment-info">
+                  <h2>Payment Details</h2>
+                  <form id="payment-form">
+                      <!-- Stripe Card Element -->
+                      <div id="card-element">
+                          <!-- A Stripe Element will be inserted here. -->
+                      </div>
+                      <!-- Error message -->
+                      <div id="card-errors" role="alert"></div>
+  
+                      <button id="submit-button" type="submit">Submit Payment</button>
+                  </form>
+              </section>
+  
+              <!-- Order Summary -->
+              <section class="order-summary">
+                  <h2>Order Summary</h2>
+                  <div id="cart-items"></div>
+                  <p>Total: <span id="total-amount">$0.00</span></p>
+              </section>
+          </div>
+      </main>
+  
+      <footer>
+        <p>© 2024 Meaganrose Pearsall</p>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+    </footer>
+  
+      <!-- Custom Script -->
+      <script src="checkout.js"></script> <!-- Custom JS file to handle payment and checkout -->
+  </body>
+  </html>
+  

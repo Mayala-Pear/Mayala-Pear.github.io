@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist | Meaganrose Pearsall</title>
+    <link rel="stylesheet" href="Art.css">
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <ul>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <a href="Art.html"><img src="logo.png" alt="Logo" class="logo"></a> <!-- Wrapped the logo in an anchor tag -->
+            <ul>
+                <li><a href="contact.html">Contact</a></li>
+                <div class="cart">
+                    <button id="cart-button">Cart (<span id="cart-count">0</span>)</button>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="cart">
+            <h1>Your Cart</h1>
+            
+            <!-- Cart Items -->
+            <div class="cart-items"></div>
+            
+            <!-- Cart Summary -->
+            <div class="cart-summary">
+                <h2>Total: $<span id="total-price">0.00</span></h2>
+                <button class="checkout" onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Meaganrose Pearsall</p>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+    </footer>
+
+    <script src="Art.js"></script>
+</body>
+</html>
