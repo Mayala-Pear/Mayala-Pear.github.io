@@ -79,30 +79,18 @@ nav .logo-link {
 
 /* Mobile Menu Button */
 .mobile-menu {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
+    display: none; /* Hide mobile menu button */
 }
 
 /* Responsive Design */
 @media (max-width: 767px) {
     .nav-links {
-        display: none;
-        flex-direction: column;
+        display: flex; /* Show links inline */
+        flex-direction: row; /* Keep them in a row */
         width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
+        position: static; /* Remove absolute positioning */
         background-color: #f4c2c2;
         padding: 10px 0; /* Add padding for better spacing */
-        transition: max-height 0.3s ease; /* Smooth transition */
-        max-height: 0; /* Collapsed by default */
-        overflow: hidden; /* Hide overflow when collapsed */
-    }
-
-    .nav-links.active {
-        display: flex;
-        max-height: 300px; /* Limit the height when expanded */
     }
 
     .nav-link {
@@ -117,18 +105,12 @@ nav .logo-link {
         color: white; /* Change text color on hover */
     }
 
-    .mobile-menu {
-        display: block;
-    }
-
     #navbar {
-        flex-direction: column;
-        align-items: flex-start; /* Align items to the start */
+        flex-direction: row; /* Ensure navbar items are in a row */
+        align-items: center; /* Center items vertically */
         padding: 0 10px; /* Add padding for navbar */
     }
 }
-
-
 
 /* Main Content */
 main {

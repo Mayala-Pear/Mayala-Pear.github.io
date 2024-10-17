@@ -10,16 +10,16 @@
     <header>
         <nav id="navbar">
             <a href="index.html" class="logo-link"><img src="logo.png" alt="Logo" class="logo"></a>
-            <div class="mobile-menu" id="mobile-menu-button">☰</div>
             <ul class="nav-links">
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <div class="cart">
                 <button id="cart-button">Cart (<span id="cart-count">0</span>)</button>
             </div>
         </nav>
+        
         
         
 
@@ -49,9 +49,9 @@
                 <h1>Good Things Coming.</h1>
                 <div class="accordion-container">
                     <div class="accordion">
-                        <h3>September</h3>
+                        <h3>2024</h3>
                         <div class="content">
-                            <p>I am currently working on creating an original collection of paintings. I will have all prints as well as origianals for sale on my web page hopefully by the end of September.</p>
+                            <p>I am currently working on creating an original collection of paintings and ceramics. I will have all artwork for sale on my web page hopefully by the end of the year.</p>
                         </div>
                         <h3>Illistrated Cookbook</h3>
                         <div class="content">
@@ -67,10 +67,6 @@
                         </div>
                     </div>
             </section>
-                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                    <script src="Art.js"></script>
-                </body>
-            </section>
     
             <section class="gallery">
                 <h1>Newest Additions</h1>
@@ -78,14 +74,14 @@
                     <img src="fish.png" alt="Art 1">
                     <h2>Sardines- Original Acrylic on Canvas</h2>
                     <p>$150</p>
-                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="add-to-cart" data-name="Fish painting" data-price="150.00" data-image="fish.png">Add to Cart</button>
                 </article>
             
                 <article class="art-item">
                     <img src="coastal.png" alt="Art 2">
                     <h2>La Jalla- Photography print</h2>
                     <p>$30</p>
-                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="add-to-cart" data-name="La Jolla" data-price="30.00" data-image="coastal.png">Add to Cart</button>
                 </article>
             
                 <article class="art-item">
@@ -106,6 +102,7 @@
     </footer>
 
     <script src="Art.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
 </body>
 </html>
