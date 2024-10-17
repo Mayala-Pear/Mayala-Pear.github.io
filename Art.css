@@ -94,10 +94,27 @@ nav .logo-link {
         top: 60px;
         left: 0;
         background-color: #f4c2c2;
+        padding: 10px 0; /* Add padding for better spacing */
+        transition: max-height 0.3s ease; /* Smooth transition */
+        max-height: 0; /* Collapsed by default */
+        overflow: hidden; /* Hide overflow when collapsed */
     }
 
     .nav-links.active {
         display: flex;
+        max-height: 300px; /* Limit the height when expanded */
+    }
+
+    .nav-link {
+        padding: 10px 20px; /* Add padding for the links */
+        text-align: center; /* Center align the text */
+        color: #333; /* Link color */
+        text-decoration: none; /* Remove underline */
+    }
+
+    .nav-link:hover {
+        background-color: #e7a1a1; /* Change background on hover */
+        color: white; /* Change text color on hover */
     }
 
     .mobile-menu {
@@ -106,12 +123,9 @@ nav .logo-link {
 
     #navbar {
         flex-direction: column;
+        align-items: flex-start; /* Align items to the start */
+        padding: 0 10px; /* Add padding for navbar */
     }
-}
-
-/* Add smooth transition for mobile menu */
-.nav-links {
-    transition: all 0.3s ease;
 }
 
 
