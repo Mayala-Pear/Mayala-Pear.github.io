@@ -118,25 +118,66 @@ function stickyNavbar() {
     }
 }
 
-// Stripe payment integration
-const stripe = Stripe('your-public-key');
+// Stripe integration
+const stripe = Stripe('your-public-key');  // Replace with your actual public key
 const elements = stripe.elements();
 const card = elements.create('card');
+
+// Mount the card element in the form
 card.mount('#card-element');
 
-document.getElementById('payment-form')?.addEventListener('submit', async (event) => {
+// Handle real-time validation errors from the card Element
+card.on('change', function(event) {
+    const displayError = document.getElementById('card-errors');
+    if (event.error) {
+        displayError.textContent = event.error.message;
+    } else {
+        displayError.textContent = '';
+    }
+});
+
+// Handle form submission
+const form = document.getElementById('payment-form');
+
+form.addEventListener('submit', async function(event) {
     event.preventDefault();
+
     const { paymentIntent, error } = await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
-            billing_details: { name: 'Customer Name' },
-        },
+            billing_details: {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                address: {
+                    line1: document.getElementById('address').value,
+                    city: document.getElementById('city').value,
+                    state: document.getElementById('state').value,
+                    postal_code: document.getElementById('zip').value
+                }
+            }
+        }
     });
 
     if (error) {
-        console.error('Payment failed', error);
+        document.getElementById('card-errors').textContent = error.message;
     } else {
-        console.log('Payment succeeded', paymentIntent);
-        window.location.href = 'confirmation.html';
+        alert('Payment successful!');
+        window.location.href = 'confirmation.html'; // Redirect to confirmation
     }
+});
+
+// Cart logic to display items and calculate total
+document.addEventListener('DOMContentLoaded', () => {
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartContainer = document.getElementById('cart-items');
+    let total = 0;
+
+    cartItems.forEach(item => {
+        const itemElement = document.createElement('p');
+        itemElement.textContent = `${item.name} - $${item.price.toFixed(2)} x ${item.quantity}`;
+        cartContainer.appendChild(itemElement);
+        total += item.price * item.quantity;
+    });
+
+    document.getElementById('total-amount').textContent = `$${total.toFixed(2)}`;
 });
