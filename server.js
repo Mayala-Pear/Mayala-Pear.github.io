@@ -1,26 +1,9 @@
 const express = require('express');
+const stripe = require('stripe')('sk_live_...yj3u'); // Use your actual secret key
 const app = express();
-const stripe = require('stripe')('sk_live_...yj3u');  // Your Stripe Secret Key
-const bodyParser = require('body-parser');
-app.use(bodyParser.json());
 
-app.post('/create-payment-intent', async (req, res) => {
-  const { amount } = req.body;  // Amount should be in cents
-
-  try {
-    const paymentIntent = await stripe.paymentIntents.create({
-      amount: amount,
-      currency: 'usd',
-    });
-    
-    res.send({
-      clientSecret: paymentIntent.client_secret
-    });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
+app.use(express.json());
 
 app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+  console.log('Server running on http://localhost:3000');
 });
