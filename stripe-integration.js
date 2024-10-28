@@ -1,5 +1,5 @@
 // Initialize Stripe with your publishable key
-const stripe = Stripe('your-publishable-key');  // Replace with your Stripe Publishable Key
+const stripe = Stripe('pk_live_51Q04fiJSApE0H7LayEkLXFtnyR1AwbOqBHHRCuH0vzJ2aVCsNFKT6v9M4JFvigin8xr9RV9i5UmSOSsUEaWUmMEW00PiM7mtKZ');  // Replace with your Stripe Publishable Key
 const elements = stripe.elements();
 
 // Create an instance of the card Element.
